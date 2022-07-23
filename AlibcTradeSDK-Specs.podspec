@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlibcTradeSDK-Specs'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'Specs for AlibcTradeSDK'
   s.description      = 'Specs for AlibcTradeSDK.'
   s.homepage         = 'https://github.com/bashen1/AlibcTradeSDK-Specs'
@@ -17,7 +17,6 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/bashen1/AlibcTradeSDK-Specs.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
-  s.resources = "mtopsdk_configuration.plist"
   
   s.subspec 'AliAuthSDK' do |ss|
     ss.requires_arc = true
@@ -66,7 +65,7 @@ Pod::Spec.new do |s|
   end
 
   s.exclude_files = "UTDID.framework/Versions/A/Resources/Info.plist"
-  s.resources = ["AlibcLinkPartnerSDK.framework/SmartLink.bundle", "UTDID.framework/Versions/A/Resources/*"]
+  s.resources = ["mtopsdk_configuration.plist", "AlibcLinkPartnerSDK.framework/SmartLink.bundle", "UTDID.framework/Versions/A/Resources/*"]
   s.preserve_paths = "UTDID.framework/*"
   s.source_files = "AlibcLinkPartnerSDK.framework/Headers/*", "UTMini.framework/Headers/*"
   s.vendored_frameworks = "AlibcLinkPartnerSDK.framework", "UTDID.framework", "UTMini.framework"

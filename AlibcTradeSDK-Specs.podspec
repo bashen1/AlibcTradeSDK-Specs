@@ -8,22 +8,15 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlibcTradeSDK-Specs'
-  s.version          = '0.2.0'
-  s.summary          = '阿里百川 AlibcTradeSDK'
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
+  s.version          = '1.0.0'
+  s.summary          = 'Specs for AlibcTradeSDK'
+  s.description      = 'Specs for AlibcTradeSDK.'
   s.homepage         = 'https://github.com/bashen1/AlibcTradeSDK-Specs'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '孑愁' => 'maochunjie@gmail.com' }
   s.source           = { :git => 'https://github.com/bashen1/AlibcTradeSDK-Specs.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
-
-  # s.source_files = 'AlibcTradeSDK-Specs/Classes/**/*'
-
   s.resources = "mtopsdk_configuration.plist"
   
   s.subspec 'AliAuthSDK' do |ss|
@@ -79,8 +72,17 @@ TODO: Add long description of the pod here.
   s.vendored_frameworks = "AlibcLinkPartnerSDK.framework", "UTDID.framework", "UTMini.framework"
   s.frameworks = "CoreTelephony", "CoreMotion", "JavaScriptCore"
   s.libraries = "sqlite3", "c++", "z", "resolv"
-  s.user_target_xcconfig = { 'OTHER_LDFLAGS' => '-lstdc++ -ObjC', 'ENABLE_BITCODE' => 'NO', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lstdc++ -ObjC', 'ENABLE_BITCODE' => 'NO', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = {
+    'OTHER_LDFLAGS' => '-lstdc++ -ObjC',
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
+  s.pod_target_xcconfig = {
+    'OTHER_LDFLAGS' => '-lstdc++ -ObjC',
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
   s.requires_arc = true
-  s.xcconfig = { "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/UTDID" }
+  s.static_framework = true
+  s.xcconfig = {
+    "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/UTDID"
+  }
 end

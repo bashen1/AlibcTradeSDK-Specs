@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlibcTradeSDK-Specs'
-  s.version          = '1.1.0'
+  s.version          = '1.2.0'
   s.summary          = 'Specs for AlibcTradeSDK'
   s.description      = 'Specs for AlibcTradeSDK.'
   s.homepage         = 'https://github.com/bashen1/AlibcTradeSDK-Specs'
